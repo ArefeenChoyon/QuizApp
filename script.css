@@ -1,10 +1,14 @@
-/* Base styles */
+/* Base Styles
+-------------------------------------------------- */
+/* Main container and background styles */
 body {
     background: linear-gradient(135deg, #f6f8fc 0%, #e9edf5 100%);
     min-height: 100vh;
 }
 
-/* Card styles */
+/* Card Styles
+-------------------------------------------------- */
+/* Main container cards with glass effect */
 .quiz-card {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
@@ -12,7 +16,9 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Question animation */
+/* Animations
+-------------------------------------------------- */
+/* Question transition animations */
 .question-enter {
     animation: slideIn 0.5s ease-out;
 }
@@ -28,7 +34,9 @@ body {
     }
 }
 
-/* Timer styles */
+/* Timer Styles
+-------------------------------------------------- */
+/* Timer circle and warning states */
 .timer-circle {
     box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
     transition: all 0.3s ease;
@@ -51,7 +59,9 @@ body {
     }
 }
 
-/* Option button styles */
+/* Interactive Elements
+-------------------------------------------------- */
+/* Option buttons styling and hover effects */
 .option-button {
     position: relative;
     overflow: hidden;
@@ -67,12 +77,16 @@ body {
     transform: translateY(0);
 }
 
-/* Progress bar animation */
+/* Progress Indicators
+-------------------------------------------------- */
+/* Progress bar and transitions */
 .progress-bar {
     transition: width 0.5s ease-in-out;
 }
 
-/* Category badge */
+/* Category and Difficulty Indicators
+-------------------------------------------------- */
+/* Badge styling for categories and difficulty levels */
 .category-badge {
     background: rgba(59, 130, 246, 0.1);
     border: 1px solid rgba(59, 130, 246, 0.2);
@@ -187,7 +201,9 @@ body {
     border-radius: 3px;
 }
 
-/* Print styles */
+/* Print Styles
+-------------------------------------------------- */
+/* Styles for printed results */
 @media print {
     body {
         background: none;
@@ -254,6 +270,7 @@ body {
 /* Custom range input styling */
 input[type="range"] {
     -webkit-appearance: none;
+    appearance: none;
     height: 8px;
     background: #dbeafe;
     border-radius: 5px;
@@ -278,6 +295,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
 
 input[type="range"]::-webkit-slider-runnable-track {
     -webkit-appearance: none;
+    appearance: none;
     box-shadow: none;
     border: none;
     background: transparent;
@@ -290,4 +308,48 @@ input[type="range"]::-webkit-slider-runnable-track {
 
 .difficulty-button:hover {
     transform: translateY(-2px);
+}
+
+/* Accessibility and User Experience
+-------------------------------------------------- */
+/* Custom scrollbar styling */
+.custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #94a3b8 #f1f5f9;
+}
+
+/* Form Controls
+-------------------------------------------------- */
+/* Range input styling */
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 8px;
+    background: #dbeafe;
+    border-radius: 5px;
+    background-image: linear-gradient(#3b82f6, #3b82f6);
+    background-repeat: no-repeat;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: #3b82f6;
+    cursor: pointer;
+    box-shadow: 0 0 2px 0 #555;
+    transition: background .3s ease-in-out;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+    background: #2563eb;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    appearance: none;
+    box-shadow: none;
+    border: none;
+    background: transparent;
 } 
