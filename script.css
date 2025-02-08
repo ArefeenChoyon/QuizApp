@@ -1,0 +1,293 @@
+/* Base styles */
+body {
+    background: linear-gradient(135deg, #f6f8fc 0%, #e9edf5 100%);
+    min-height: 100vh;
+}
+
+/* Card styles */
+.quiz-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Question animation */
+.question-enter {
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Timer styles */
+.timer-circle {
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+    transition: all 0.3s ease;
+}
+
+.timer-circle.warning {
+    box-shadow: 0 0 15px rgba(239, 68, 68, 0.3);
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Option button styles */
+.option-button {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.option-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.option-button:active {
+    transform: translateY(0);
+}
+
+/* Progress bar animation */
+.progress-bar {
+    transition: width 0.5s ease-in-out;
+}
+
+/* Category badge */
+.category-badge {
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    transition: all 0.3s ease;
+}
+
+.category-badge:hover {
+    background: rgba(59, 130, 246, 0.15);
+}
+
+/* Difficulty badges */
+.difficulty-badge {
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-weight: 600;
+}
+
+.difficulty-easy {
+    background: rgba(34, 197, 94, 0.1);
+    color: rgb(21, 128, 61);
+}
+
+.difficulty-medium {
+    background: rgba(234, 179, 8, 0.1);
+    color: rgb(161, 98, 7);
+}
+
+.difficulty-hard {
+    background: rgba(239, 68, 68, 0.1);
+    color: rgb(185, 28, 28);
+}
+
+/* Feedback message animations */
+.feedback-message {
+    animation: fadeInUp 0.5s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Loading spinner */
+.spinner {
+    border-top-color: #3b82f6;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Results section */
+.results-card {
+    animation: scaleIn 0.5s ease-out;
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #94a3b8;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #64748b;
+}
+
+/* Custom scrollbar for summary section */
+.custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #94a3b8 #f1f5f9;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #94a3b8;
+    border-radius: 3px;
+}
+
+/* Print styles */
+@media print {
+    body {
+        background: none;
+    }
+    
+    .quiz-card {
+        box-shadow: none;
+        border: none;
+    }
+    
+    .no-print {
+        display: none !important;
+    }
+
+    .custom-scrollbar {
+        max-height: none !important;
+        overflow: visible !important;
+    }
+
+    .printable-content {
+        height: auto !important;
+        overflow: visible !important;
+    }
+
+    /* Ensure all content is visible */
+    .results-card {
+        page-break-inside: avoid;
+    }
+
+    /* Ensure questions don't break across pages */
+    .border.rounded-lg {
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+}
+
+/* Logo animation */
+.quiz-logo svg {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Stat cards hover effect */
+.stat-card {
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Custom range input styling */
+input[type="range"] {
+    -webkit-appearance: none;
+    height: 8px;
+    background: #dbeafe;
+    border-radius: 5px;
+    background-image: linear-gradient(#3b82f6, #3b82f6);
+    background-repeat: no-repeat;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: #3b82f6;
+    cursor: pointer;
+    box-shadow: 0 0 2px 0 #555;
+    transition: background .3s ease-in-out;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+    background: #2563eb;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+}
+
+/* Difficulty button animations */
+.difficulty-button {
+    transition: all 0.3s ease;
+}
+
+.difficulty-button:hover {
+    transform: translateY(-2px);
+} 
